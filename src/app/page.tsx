@@ -1,7 +1,8 @@
-export default function Home() {
+
+export default function loginPage() {
   return (
     <div className="">
-      fisrtPage
+
     </div>
   );
 }
