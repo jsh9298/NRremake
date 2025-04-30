@@ -1,4 +1,4 @@
-import Loader from "../widgets/loadingWidgets/siteLoader";
+import Loader from "@/src/widgets/loadingWidgets/siteLoader";
 
 export default function loading() {
     return (

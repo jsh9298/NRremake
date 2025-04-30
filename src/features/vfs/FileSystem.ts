@@ -1,5 +1,5 @@
-import BaseTree from "../../shared/bases/features/vfs/tree";
-import { filetypes, link_type, Node, Inode } from "../../shared/bases/features/vfs/types";
+import BaseTree from "../../shared/types/features/tree";
+import { filetypes, link_type, Node, Inode } from "../../shared/types/features/types";
 import IndexNum from "./inode/InodeGenerator";
 class FileSystem {
     dataBlock = new Map<number, Node>();
@@ -55,7 +55,12 @@ class FileSystem {
             return false;
         }
     }
+    // readNode(name: string, user: string, group: string[]): Node {
 
+    // }
+    // updateNode(data: Partial<Node>, user: string, group: string[]): boolean {
+
+    // }
 }
 export { FileSystem };
 
