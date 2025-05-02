@@ -1,4 +1,4 @@
-class BaseTree<T> {
+export class BaseTree<T> {
     public value: T;
     public children: BaseTree<T>[];
     constructor(value: T) {
@@ -49,5 +49,3 @@ class BaseTree<T> {
         return result;
     }
 }
-
-export default BaseTree;

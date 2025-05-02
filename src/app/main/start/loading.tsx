@@ -1,8 +1,9 @@
-import Loader from "@/src/widgets/loadingWidgets/gameLoader";
+import { GameLoader } from "@/src/views";
+
 export default function loading() {
     return (
         <div className="">
-            <Loader></Loader>
+            <GameLoader />
         </div>
     );
 }

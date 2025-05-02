@@ -1,3 +1,3 @@
-export default function mainEdit() {
 
+export default async function mainEdit() {
 }

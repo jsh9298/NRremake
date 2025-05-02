@@ -1,9 +1,8 @@
-import Loader from "@/src/widgets/loadingWidgets/siteLoader";
-
+import { SiteLoader } from "@/src/views";
 export default function loading() {
     return (
         <div className="">
-            <Loader></Loader>
+            <SiteLoader />
         </div>
     );
 }

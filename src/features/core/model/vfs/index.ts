@@ -1,7 +1,6 @@
-import BaseTree from "../../shared/types/features/tree";
-import { filetypes, link_type, Node, Inode } from "../../shared/types/features/types";
-import IndexNum from "./inode/InodeGenerator";
-class FileSystem {
+import { filetypes, link_type, Node, Inode, IndexNum } from "@/src/features/core";
+import { BaseTree } from "../base";
+export class FileSystem {
     dataBlock = new Map<number, Node>();
     inodeBlock = new Map<string, number>();
     idx = new IndexNum();
@@ -62,7 +61,7 @@ class FileSystem {
 
     // }
 }
-export { FileSystem };
+
 
 
 

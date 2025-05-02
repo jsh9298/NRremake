@@ -1,5 +1,4 @@
-export default function Loader() {
-    const loaderClasses = `
+export const loader = `
     relative            
     inline-block       
     w-[2em]                
@@ -29,11 +28,11 @@ export default function Loader() {
     after:bg-current     
   `.replace(/\s+/g, ' ').trim();
 
-    return (
-        <div className="h-screen grid place-items-center overflow-hidden bg-background text-foreground">
-            <div className={loaderClasses}>
-            </div>
-        </div>
-    );
-
-};
+export const box = `
+h-screen
+grid 
+place-items-center 
+overflow-hidden 
+bg-background 
+text-foreground
+`.replace(/\s+/g, ' ').trim();

@@ -1,3 +1,4 @@
-export default function mainStart() {
+
+export default async function mainStart() {
 
 }

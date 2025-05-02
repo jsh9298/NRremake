@@ -1,4 +1,4 @@
-class IndexNum {
+export class IndexNum {
     inodes: number[];
     constructor() {
         this.inodes = [];
@@ -25,4 +25,3 @@ class IndexNum {
     }
 }
 
-export default IndexNum;
