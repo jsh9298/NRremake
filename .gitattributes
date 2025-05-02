@@ -1,0 +1,27 @@
+# Auto detect text files and normalize to native line endings
+* text=auto
+
+# Specify files that should always use LF line endings
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
+.prettierrc* text eol=lf
+tailwind.config.ts text eol=lf
+.git* text eol=lf
+# Denote files that are binary and should not be modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
