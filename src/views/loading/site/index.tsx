@@ -6,7 +6,7 @@
 //     leftCogBox, leftCog1, leftCog2, leftCog3, leftCog4,
 //     bottomCogBox, bottomCog1, bottomCog2, bottomCog3, bottomCog4
 // } from "./styles";
-import styles from './login.module.css';
+import styles from './styles.module.css';
 export function SiteLoader() {
     return (
         <div className={styles.box}>
