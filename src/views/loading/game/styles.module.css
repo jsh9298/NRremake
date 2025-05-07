@@ -1,0 +1,99 @@
+/* Animations for the loader */
+
+@keyframes loader {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+/* Corresponding CSS Rules */
+
+/* Styles for the element corresponding to the 'loader' variable */
+.loader {
+    position: relative;
+    display: inline-block;
+    /* w-[2em] -> width: 2em; */
+    width: 2em;
+    /* aspect-[1] -> aspect-ratio: 1; */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* rounded-full */
+
+    /* animate-[loader_0.5s_linear_infinite] -> animation: [name] [duration] [timing-function] [iteration-count]; */
+    animation-name: loader;
+    /* @keyframes loader */
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    /* border-4 -> border-width: 4px; (Tailwind 기본 스케일 기준) */
+    border-width: 4px;
+    border-style: solid;
+    /* border-style은 Tailwind 클래스에 명시되지 않았지만 기본 solid입니다. */
+    /* border-color: var(--color) var(--ghost-color) var(--ghost-color) var(--color); 에 해당 */
+    border-top-color: currentcolor;
+    /* border-t-current */
+    border-right-color: transparent;
+    /* border-r-transparent (ghost-color 역할) */
+    border-bottom-color: transparent;
+    /* border-b-transparent (ghost-color 역할) */
+    border-left-color: currentcolor;
+    /* border-l-current */
+}
+
+/* ::before 가상 요소 스타일 */
+.loader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Tailwind의 end-0은 LTR에서 right-0에 해당 */
+    /* w-[calc(2em * 0.172)] -> width: calc(2em * 0.172); */
+    width: calc(2em * 0.172);
+    /* aspect-[1] -> aspect-ratio: 1; */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* rounded-full */
+    background-color: currentcolor;
+    /* bg-current */
+}
+
+/* ::after 가상 요소 스타일 */
+.loader::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* Tailwind의 start-0은 LTR에서 left-0에 해당 */
+    /* w-[calc(2em * 0.172)] -> width: calc(2em * 0.172); */
+    width: calc(2em * 0.172);
+    /* aspect-[1] -> aspect-ratio: 1; */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* rounded-full */
+    background-color: currentcolor;
+    /* bg-current */
+}
+
+
+/* Styles for the element corresponding to the 'box' variable (container for the loader) */
+.box {
+    height: 100vh;
+    /* h-screen */
+    display: grid;
+    /* grid */
+    place-items: center;
+    /* place-items-center */
+    overflow: hidden;
+    /* overflow-hidden */
+    /* 배경색과 글자색은 CSS 변수 또는 직접 색상 값으로 변경해야 합니다. */
+    /* Tailwind config에서 정의된 background 및 foreground 색상을 따를 것입니다. */
+    background-color: var(--background-color, #ffffff);
+    /* 기본값 흰색 예시 */
+    color: var(--foreground-color, #000000);
+    /* 기본값 검정색 예시 */
+}

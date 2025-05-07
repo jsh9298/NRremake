@@ -1,5 +1,5 @@
 
-import { login, msg } from '@/src/features/auth/model'
+import { login, getMsg } from '@/src/features/auth/model'
 
 export default function LoginForm() {
     return (
@@ -10,7 +10,7 @@ export default function LoginForm() {
             <input id="password" name="password" type="password" required />
             <button formAction={login}>Log in</button>
             {
-                msg && <p>{msg}</p>
+                getMsg && <p>{getMsg()}</p>
             }
         </form>
     )

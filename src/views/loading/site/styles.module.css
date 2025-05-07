@@ -1,0 +1,253 @@
+/* Animations */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotateLeft {
+    from {
+        transform: rotate(16deg)
+    }
+
+    to {
+        transform: rotate(376deg)
+    }
+}
+
+@keyframes rotateRight {
+    from {
+        transform: rotate(4deg)
+    }
+
+    to {
+        transform: rotate(364deg)
+    }
+}
+
+
+/* Corresponding CSS Rules */
+
+/* Styles for the element corresponding to the 'box' variable */
+.box {
+    position: relative;
+    margin: auto;
+    width: 400px;
+}
+
+/* Styles for the element corresponding to the 'overlay' variable */
+.overlay {
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    /* inset shadow와 일반 shadow를 콤마로 구분하여 함께 적용 */
+    box-shadow: inset 0px 0px 19px 0px rgba(0, 0, 0, 0.16), 0px 0px 0px 1000px rgba(255, 255, 255, 0.67);
+    border-radius: 50%;
+    /* rounded-full */
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* absolute와 auto margin을 함께 사용하여 중앙 정렬 */
+}
+
+/* Styles for the element corresponding to the 'layout' variable */
+/* 이 클래스는 톱니바퀴들을 감싸는 컨테이너로 보입니다. */
+.layout {
+    width: 100px;
+    height: 100px;
+    z-index: -2;
+    /* !important는 특정 속성에 적용되므로 top에 붙입니다. */
+    top: -120px !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* absolute와 auto margin을 함께 사용하여 중앙 정렬 */
+}
+
+/* Styles for the element corresponding to the 'topCogBox' variable */
+/* 큰 톱니바퀴 컨테이너 */
+.topCogBox {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-origin: 50px 50px;
+    /* 톱니바퀴 회전 중심 */
+    animation: rotate 10s infinite linear;
+    /* @keyframes rotate 사용 */
+}
+
+/* Styles for the elements corresponding to the 'topCog1', 'topCog2', 'topCog3' variables */
+/* 큰 톱니바퀴의 개별 날 부분 */
+.topCog1,
+.topCog2,
+.topCog3 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #fbbf24;
+    /* bg-amber-400 */
+}
+
+.topCog1 {
+    transform: rotate(30deg);
+}
+
+.topCog2 {
+    transform: rotate(60deg);
+}
+
+.topCog3 {
+    transform: rotate(90deg);
+}
+
+/* Styles for the element corresponding to the 'topCog4' variable */
+/* 큰 톱니바퀴 중앙 원 부분 */
+.topCog4 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* rounded-full */
+    /* 배경색은 Tailwind config의 theme.colors.background 또는 CSS 변수를 따를 것입니다. */
+    /* 여기서는 CSS 변수로 남겨둡니다. 실제 값은 정의된 곳에서 가져와야 합니다. */
+    background-color: var(--background-color, #ffffff);
+    /* 기본값 흰색 예시 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* absolute와 auto margin을 함께 사용하여 중앙 정렬 */
+}
+
+
+/* Styles for the element corresponding to the 'leftCogBox' variable */
+/* 왼쪽 톱니바퀴 컨테이너 */
+.leftCogBox {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform-origin: 40px 40px;
+    /* 톱니바퀴 회전 중심 */
+    /* animation 속성에 reverse가 붙어 회전 방향이 반대 */
+    animation: rotateLeft 10s 0.1s infinite reverse linear;
+    top: 28px;
+    left: -24px;
+    transform: rotate(16deg);
+    /* 컨테이너 자체의 초기 회전 */
+}
+
+/* Styles for the elements corresponding to the 'leftCog1', 'leftCog2', 'leftCog3' variables */
+/* 왼쪽 톱니바퀴의 개별 날 부분 */
+.leftCog1,
+.leftCog2,
+.leftCog3 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 6px;
+    background-color: #60a5fa;
+    /* bg-blue-400 */
+}
+
+.leftCog1 {
+    transform: rotate(30deg);
+}
+
+.leftCog2 {
+    transform: rotate(60deg);
+}
+
+.leftCog3 {
+    transform: rotate(90deg);
+}
+
+/* Styles for the element corresponding to the 'leftCog4' variable */
+/* 왼쪽 톱니바퀴 중앙 원 부분 */
+.leftCog4 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* rounded-full */
+    background-color: var(--background-color, #ffffff);
+    /* 기본값 흰색 예시 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* absolute와 auto margin을 함께 사용하여 중앙 정렬 */
+}
+
+
+/* Styles for the element corresponding to the 'bottomCogBox' variable */
+/* 하단 톱니바퀴 컨테이너 */
+.bottomCogBox {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transform-origin: 30px 30px;
+    /* 톱니바퀴 회전 중심 */
+    animation: rotateLeft 10.2s 0.4s infinite linear;
+    /* @keyframes rotateLeft 사용 */
+    top: -65px;
+    left: 79px;
+    transform: rotate(4deg);
+    /* 컨테이너 자체의 초기 회전 */
+}
+
+/* Styles for the elements corresponding to the 'bottomCog1', 'bottomCog2', 'bottomCog3' variables */
+/* 하단 톱니바퀴의 개별 날 부분 */
+.bottomCog1,
+.bottomCog2,
+.bottomCog3 {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #34d399;
+    /* bg-emerald-400 */
+}
+
+.bottomCog1 {
+    transform: rotate(30deg);
+}
+
+.bottomCog2 {
+    transform: rotate(60deg);
+}
+
+.bottomCog3 {
+    transform: rotate(90deg);
+}
+
+/* Styles for the element corresponding to the 'bottomCog4' variable */
+/* 하단 톱니바퀴 중앙 원 부분 */
+.bottomCog4 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* rounded-full */
+    background-color: var(--background-color, #ffffff);
+    /* 기본값 흰색 예시 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* absolute와 auto margin을 함께 사용하여 중앙 정렬 */
+}

@@ -1,5 +1,5 @@
 
-import { signup, msg } from '@/src/features/auth/model'
+import { signup, getMsg } from '@/src/features/auth/model'
 
 export default function SignupForm() {
     return (
@@ -12,7 +12,7 @@ export default function SignupForm() {
             <input id="name" name="name" type="text" required />
             <button formAction={signup}>Sign up</button>
             {
-                msg && <p>{msg}</p>
+                getMsg && <p>{getMsg()}</p>
             }
         </form>
     )
