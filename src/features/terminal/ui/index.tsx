@@ -80,7 +80,7 @@ export default function Test() {
 
     const welcomeMessage = (
         <span>
-            Type "help" for all available commands. <br />
+            Type &quot;help&quot; for all available commands. <br />
         </span>
     );
     return (

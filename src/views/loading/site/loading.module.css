@@ -1,0 +1,158 @@
+.box {
+    position: relative;
+    margin: auto;
+    width: 400px;
+}
+
+.overlay {
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 0px 1000px rgba(255, 255, 255, 0.67);
+    border-radius: calc(infinity * 1px);
+    display: absolute;
+    z-index: 2;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.layout {
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    top: -120px !important;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+
+.topCogBox {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-origin: 50px, 50px;
+    animation: rotate 10s linear infinite;
+}
+
+.leftCogBox {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform-origin: 40px, 40px;
+    animation: rotateLeft 10s .1s infinite reverse linear;
+    top: 28px;
+    left: -24px;
+    transform: rotate(16deg);
+}
+
+.bottomCogBox {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transform-origin: 30px, 30px;
+    animation: rotateLeft 10.2s .4s infinite linear;
+    top: -65px;
+    left: 79px;
+    transform: rotate(4deg);
+}
+
+.topCogs {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: oklch(82.8% 0.189 84.429);
+}
+
+.leftCogs {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 6px;
+    background-color: oklch(70.7% 0.165 254.624);
+}
+
+.bottomCogs {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: oklch(76.5% 0.177 163.223);
+}
+
+
+.One {
+    transform: rotate(30deg);
+}
+
+.Two {
+    transform: rotate(60deg);
+}
+
+.Three {
+    transform: rotate(90deg);
+}
+
+.CogCenter {
+    border-radius: calc(infinity * 1px);
+    background-color: var(--background);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.bottomCenter {
+    width: 30px;
+    height: 30px;
+}
+
+.leftCenter {
+    width: 40px;
+    height: 40px;
+}
+
+.topCenter {
+    width: 50px;
+    height: 50px;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotateLeft {
+    from {
+        transform: rotate(16deg)
+    }
+
+    to {
+        transform: rotate(376deg)
+    }
+}
+
+@keyframes rotateRight {
+    from {
+        transform: rotate(4deg)
+    }
+
+    to {
+        transform: rotate(364deg)
+    }
+}
