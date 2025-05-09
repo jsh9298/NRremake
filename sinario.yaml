@@ -7,7 +7,6 @@ permissions: drwxr-xr-x
 owner: root
 group: root
 contents: # 디렉토리 내용을 나타내는 시퀀스 (리스트)
-
   # /bin 디렉토리
   - name: bin
     type: directory
@@ -55,7 +54,8 @@ contents: # 디렉토리 내용을 나타내는 시퀀스 (리스트)
         permissions: -rw-r--r--
         owner: root
         group: root
-        content: | # '|' 기호 뒤에 오는 들여쓰기된 텍스트는 그대로 내용이 됩니다.
+        content:
+          | # '|' 기호 뒤에 오는 들여쓰기된 텍스트는 그대로 내용이 됩니다.
           root:x:0:0:root:/root:/bin/bash
           player:x:1000:1000:Player User,,,:/home/player:/bin/bash
       # group 파일 (텍스트 타입, 여러 줄 내용)
@@ -136,7 +136,7 @@ contents: # 디렉토리 내용을 나타내는 시퀀스 (리스트)
     owner: root
     group: root
     contents:
-       # 심볼릭 링크
+      # 심볼릭 링크
       - name: ld-linux-x86-64.so.2
         type: symlink # 심볼릭 링크 타입 명시
         permissions: lwxrwxrwx # 링크 자체의 권한 (보통 lrwxrwxrwx 형태)
@@ -151,11 +151,10 @@ contents: # 디렉토리 내용을 나타내는 시퀀스 (리스트)
     owner: root
     group: root
     contents:
-       # 데이터 파일 (실제 내용 없이 존재만 표현)
+      # 데이터 파일 (실제 내용 없이 존재만 표현)
       - name: ld-2.31.so
         type: data
         permissions: -rw-r--r--
         owner: root
         group: root
-
 # 루트 디렉토리 내 다른 항목은 이 예시에서 생략
