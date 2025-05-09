@@ -6,7 +6,7 @@ export class IndexNum {
     getNumber(): number {
         let n: number = 0;
         while (true) {
-            n = Math.floor(Math.random() * 45) + 1;
+            n = Math.floor(Math.random() * 99) + 1;
             if (!this.sameNum(n)) {
                 this.inodes.push(n);
                 return n;
@@ -25,3 +25,6 @@ export class IndexNum {
     }
 }
 
+export class GidNum {
+
+}

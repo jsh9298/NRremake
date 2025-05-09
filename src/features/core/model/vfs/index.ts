@@ -1,65 +1,41 @@
-import { filetypes, link_type, Node, Inode, IndexNum } from "@/src/features/core";
+
+import { Inode, InodeType } from "../../config";
+import { IndexNum } from "../../lib";
 import { BaseTree } from "../base";
 export class FileSystem {
-    dataBlock = new Map<number, Node>();
-    inodeBlock = new Map<string, number>();
+    dataMap = new Map<number, Inode>();
+    inodeMap = new Map<string, number>();
     idx = new IndexNum();
-    baseTree: BaseTree<Node>;
+    baseTree: BaseTree<Inode, number>;
     constructor() {
-        this.baseTree = new BaseTree<Node>(
-            {
-                name: '/',
-                type: filetypes.dir,
-                owner: 'root',
-                group: ['root'],
-                permission: [7, 7, 0],
-                edit: new Date(),
-                inode: {
-                    inode: this.idx.getNumber(),
-                    link_type: link_type.none
-                }
-            }
+        const rootInodeNumber = this.idx.getNumber();
+        const rootInodeData = new Inode(
+            InodeType.Directory,
+            [0, 7, 5, 5], // [특수권한 없음, rwx, r-x, r-x]
+            0,          // ownerUid (root)
+            0,          // groupId (root)
+            4096,          // sizeInBytes (예시)
+            2,             // hardLinkCount (루트 자신 '.' 및 그 자식 디렉토리의 '..' 링크 수)
+            1,             // blockCount (예시)
+            new Date(),    // accessTime (현재 시각)
+            new Date(),    // modifyTime (현재 시각)
+            new Date()     // changeTime (현재 시각)
         );
+        this.dataMap.set(rootInodeNumber, rootInodeData);
+        this.inodeMap.set('/', rootInodeNumber);
+        this.baseTree = new BaseTree<Inode, number>(rootInodeData, rootInodeNumber);
     }
-    createNode(name: string, type: filetypes, owner: string) {
-        const newInode: Inode = {
-            inode: this.idx.getNumber(),
-            link_type: link_type.none
-        }
-        const newNode: Node = {
-            name: name,
-            type: type,
-            owner: owner,
-            group: [owner],
-            permission: [],
-            edit: new Date(),
-            inode: newInode
-        }
-        this.dataBlock.set(newInode.inode, newNode);
-        this.inodeBlock.set(newNode.name, newInode.inode);
+    createNode(parentDirPath: string, fileName: string, initialContent: string) {
     }
-    deleteNode(name: string): boolean {
-        const inode = this.inodeBlock.get(name);
-        if (inode) {
-            const target = this.dataBlock.get(inode);
-            if (target) {
-                this.baseTree.removeNode(target);
-                this.dataBlock.delete(inode);
-                this.inodeBlock.delete(name);
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-    // readNode(name: string, user: string, group: string[]): Node {
+    deleteNode(name: string, user: string, group: string[]): boolean {
 
-    // }
-    // updateNode(data: Partial<Node>, user: string, group: string[]): boolean {
+    }
+    updateNode(name: string, data: Node, user: string, group: string[]): boolean {
 
-    // }
+    }
+    checkPermit(currPath: string, user: string, group: string[], data?: Node) {
+
+    }
 }
 
 
