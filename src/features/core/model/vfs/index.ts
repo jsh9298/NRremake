@@ -36,6 +36,9 @@ export class FileSystem {
     checkPermit(currPath: string, user: string, group: string[], data?: Node) {
 
     }
+    toObj(){
+        
+    }
 }
 
 

@@ -36,7 +36,7 @@ export async function signup(formData: FormData) {
         options: {
             shouldConfirmEmail: false,
             data: {
-                name: formData.get('name') as String
+                name: formData.get('name') as string
             }
         }
     };
@@ -62,10 +62,9 @@ export async function logout() {
     redirect('/');
 }
 
-// export async function deleteAccount() {
-// 서버 측 API 라우트나 Edge Function 호출
-//   await fetch('/api/auth/delete-account', { method: 'POST' });
-// }
+export async function deleteAccount(formData: FormData) {
+    const pass = formData.get("password");
+}
 
 
 export async function getMsg() {
