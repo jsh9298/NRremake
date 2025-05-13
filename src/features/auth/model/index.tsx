@@ -63,9 +63,22 @@ export async function logout() {
 }
 
 export async function deleteAccount(formData: FormData) {
-    const pass = formData.get("password");
-}
+    const password = formData.get("password");
+    const response = await fetch('/api/deleteUser', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ password }),
+  });
+  const data = await response.json();
 
+  if (!response.ok) {
+     msg = data.error || '회원 탈퇴 요청 처리 실패';
+  }
+  revalidatePath('/', 'layout');
+  redirect('/');
+}
 
 export async function getMsg() {
     return msg;
