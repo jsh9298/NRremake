@@ -1,5 +1,5 @@
 
-import { signup, getMsg } from '@/src/features/auth/model'
+import { signup, getMsg } from '@/features/auth/model'
 
 export default function SignupForm() {
     return (

@@ -1,5 +1,5 @@
 
-import { getUserServer } from "@/src/entities";
+import { getUserServer } from "@/entities";
 import { redirect } from "next/navigation";
 
 export default async function mainEdit() {

@@ -1,5 +1,5 @@
 
-import styles from './loading.module.css';
+import styles from '@/views/loading/site/loading.module.css';
 export function SiteLoader() {
     return (
         <div className={styles.box}>

@@ -1,4 +1,4 @@
-import { SiteLoader } from "@/src/views";
+import { SiteLoader } from "@/views";
 export default function loading() {
     return (
         <div className="">

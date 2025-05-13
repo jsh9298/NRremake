@@ -1,5 +1,5 @@
 
-import { login, getMsg } from '@/src/features/auth/model'
+import { login, getMsg } from '@/features/auth/model'
 
 export default function LoginForm() {
     return (

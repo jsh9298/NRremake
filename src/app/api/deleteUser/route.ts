@@ -2,7 +2,7 @@
 // 회원 탈퇴 처리 서버 API 엔드포인트
 
 import { NextResponse } from "next/server";
-import { createClientAdmin, createClientServer } from "@/src/shared";
+import { createClientAdmin, createClientServer } from "@/shared";
 
 export async function POST(request: Request) {
   const { password } = await request.json(); // 클라이언트로부터 비밀번호 받기

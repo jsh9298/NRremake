@@ -1,5 +1,5 @@
 
-import { logout } from '@/src/features/auth/model'
+import { logout } from '@/features/auth/model'
 
 export default function LogOutButton() {
     return (

@@ -1,4 +1,4 @@
-import { GameLoader } from "@/src/views";
+import { GameLoader } from "@/views";
 
 export default function loading() {
     return (

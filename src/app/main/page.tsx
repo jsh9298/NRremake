@@ -1,6 +1,6 @@
 
-import { getUserServer } from "@/src/entities";
-import LogOutButton from "@/src/features/auth/ui/Logout";
+import { getUserServer } from "@/entities";
+import LogOutButton from "@/features/auth/ui/Logout";
 import { redirect } from "next/navigation";
 export default async function mainPage() {
     const user = await getUserServer();

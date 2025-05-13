@@ -1,5 +1,5 @@
 
-import { getMsg, deleteAccount } from '@/src/features/auth/model'
+import { getMsg, deleteAccount } from '@/features/auth/model'
 
 export default function DeleteForm() {
     return (
