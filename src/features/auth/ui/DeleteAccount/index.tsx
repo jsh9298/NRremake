@@ -1,4 +1,3 @@
-
 import { getMsg, deleteAccount } from '@/features/auth/model'
 
 export default function DeleteForm() {

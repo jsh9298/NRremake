@@ -10,5 +10,6 @@ export async function createClientAdmin() {
         persistSession: false,
       },
     }
-  ).auth.admin;
+  );
 }
+//.auth.admin;

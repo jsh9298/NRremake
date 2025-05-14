@@ -53,7 +53,9 @@ export async function POST(request: Request) {
   // 3. 비밀번호 인증 성공 시, Admin 클라이언트를 사용하여 사용자 삭제
   const supabaseAdmin = await createClientAdmin(); // Admin 클라이언트 생성 (service_role 키 사용)
 
-  const { error: deleteError } = await supabaseAdmin.deleteUser(userId); // 사용자 ID로 삭제
+  const { error: deleteError } = await supabaseAdmin.auth.admin.deleteUser(
+    userId
+  ); // 사용자 ID로 삭제
 
   if (deleteError) {
     console.error(`UID ${userId} 사용자 삭제 오류:`, deleteError);

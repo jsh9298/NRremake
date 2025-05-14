@@ -64,7 +64,7 @@ export async function logout() {
 
 export async function deleteAccount(formData: FormData) {
     const password = formData.get("password");
-    const response = await fetch('/api/deleteUser', {
+    const response = await fetch('http://localhost:3000/api/deleteUser', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
