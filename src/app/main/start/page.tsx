@@ -1,5 +1,6 @@
 
 import { getUserServer } from "@/entities";
+import { Background } from "@/features/gui/ui/bg";
 import { redirect } from "next/navigation";
 
 export default async function mainStart() {
@@ -8,4 +9,9 @@ export default async function mainStart() {
         redirect('/'
         );
     }
+    return(
+        <div>
+            <Background/>
+        </div>
+    )
 }

@@ -1,3 +1,2 @@
-export * from './auth';
-export * from './core';
-export * from './terminal';
+export * from "./auth";
+export * from "./cli";
